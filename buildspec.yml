@@ -17,13 +17,13 @@ phases:
   post_build:
     commands:
       - echo "Syncing with S3 bucket"
-      - aws s3 sync dist/ s3:// # Replace with your bucket name
+      - aws s3 sync dist/ s3://mybucket231120241 
       - echo "Deployment to S3 complete"
 
 artifacts:
   files:
     - '**/*' 
-  base-directory: dist mybucket231120241
+  base-directory: dist 
   discard-paths: no
 
 cache:
